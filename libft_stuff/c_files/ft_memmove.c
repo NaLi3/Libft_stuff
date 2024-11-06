@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 10:10:37 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/06 10:10:42 by ilevy            ###   ########.fr       */
+/*   Created: 2024/11/06 13:28:39 by ilevy             #+#    #+#             */
+/*   Updated: 2024/11/06 13:34:33 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int	count;
+	char	*dest_cp;
+	char	*src_cp;
 
-	count = 0;
-	while (str[count])
+	dest_cp = (char *)dest;
+	src_cp = (char *)src;
+	if (dest == src)
+		return (dest);
+	if (src_cp < dest_cp)
 	{
-		count++;
+		while (n--)
+			dest_cp[n] = src_cp[n];
+		return (dest);
 	}
-	return (count);
+	while (n--)
+		*dest_cp++ = *src_cp++;
+	return (dest);
 }

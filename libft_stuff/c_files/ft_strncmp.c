@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 10:10:37 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/06 10:10:42 by ilevy            ###   ########.fr       */
+/*   Created: 2024/11/06 11:46:28 by ilevy             #+#    #+#             */
+/*   Updated: 2024/11/06 11:51:50 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	count;
+	unsigned int	i;
 
-	count = 0;
-	while (str[count])
+	i = 0;
+	while (n != 0 && s1[i] != 0 && (s1[i] == s2[i]))
 	{
-		count++;
+		i++;
+		n--;
 	}
-	return (count);
+	if (n == 0)
+		return (0);
+	else
+		return ((s1[i]) - (s2[i]));
 }

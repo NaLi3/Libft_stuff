@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 10:10:37 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/06 10:10:42 by ilevy            ###   ########.fr       */
+/*   Created: 2024/11/06 12:40:57 by ilevy             #+#    #+#             */
+/*   Updated: 2024/11/06 13:07:32 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int	count;
+	char	*dst_cp;
+	const char	*src_cp;
 
-	count = 0;
-	while (str[count])
-	{
-		count++;
-	}
-	return (count);
+	if (dest == src || n == 0)
+		return (dest);
+	if (!dest && !src)
+		return (0);
+	dest_cp = (char *)dst;
+	src_cp = (const char*)src;
+	while (n--)
+		dest_cp[n] = src_cp[n];
+	return (dest);
 }

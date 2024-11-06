@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 10:10:37 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/06 10:10:42 by ilevy            ###   ########.fr       */
+/*   Created: 2024/11/06 12:20:00 by ilevy             #+#    #+#             */
+/*   Updated: 2024/11/06 12:25:12 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+void	ft_bzero(void *s, size_t n)
 {
-	int	count;
+	size_t		i;
+	unsigned char	*string;
 
-	count = 0;
-	while (str[count])
+	i = 0;
+	string = (unsigned char *)s;
+	while (i < n)
 	{
-		count++;
+		string[i] = 0;
+		i++;
 	}
-	return (count);
+	s = string;
 }
