@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 13:28:39 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/06 15:15:19 by ilevy            ###   ########.fr       */
+/*   Created: 2024/11/06 15:21:43 by ilevy             #+#    #+#             */
+/*   Updated: 2024/11/06 15:24:33 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, const void *src, unsigned int n)
+int	ft_strlen(char *string)
 {
-	char	*dest_cp;
-	char	*src_cp;
+	unsigned int	i;
 
-	dest_cp = (char *)dest;
-	src_cp = (char *)src;
-	if (dest == src)
-		return (dest);
-	if (src_cp < dest_cp)
+	i = 0;
+	while (string[i])
+		i++;
+	return (i);
+}
+
+char	*strrchr(const char *string, int character)
+{
+	unsigned int	i;
+
+	i = ft_strlen(string);
+	while (i != 0)
 	{
-		while (n--)
-			dest_cp[n] = src_cp[n];
-		return (dest);
+		if (string[i] == character)
+		{
+			return (string[i]);
+		}
+		i--;
 	}
-	while (n--)
-		*dest_cp++ = *src_cp++;
-	return (dest);
+	return (NULL);
 }

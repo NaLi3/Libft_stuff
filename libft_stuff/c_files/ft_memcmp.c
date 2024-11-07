@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 13:28:39 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/06 15:15:19 by ilevy            ###   ########.fr       */
+/*   Created: 2024/11/06 17:16:33 by ilevy             #+#    #+#             */
+/*   Updated: 2024/11/06 17:20:47 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, const void *src, unsigned int n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*dest_cp;
-	char	*src_cp;
+	size_t	i;
+	const unsigned char	*sc1;
+	const unsigned char	*sc2;
 
-	dest_cp = (char *)dest;
-	src_cp = (char *)src;
-	if (dest == src)
-		return (dest);
-	if (src_cp < dest_cp)
+	i = 0;
+	sc1 = (const char *)s1;
+	sc2 = (const char *)s2;
+	while (sc2[i] && i < n && sc1[i] == sc2[i])
 	{
-		while (n--)
-			dest_cp[n] = src_cp[n];
-		return (dest);
+		i++;
 	}
-	while (n--)
-		*dest_cp++ = *src_cp++;
-	return (dest);
+	if (i >= n)
+		return (0);
+	return (sc1[i] - sc2[i]);
 }

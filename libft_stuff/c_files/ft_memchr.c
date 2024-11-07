@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 13:28:39 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/06 15:15:19 by ilevy            ###   ########.fr       */
+/*   Created: 2024/11/06 17:14:21 by ilevy             #+#    #+#             */
+/*   Updated: 2024/11/06 17:15:53 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, const void *src, unsigned int n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*dest_cp;
-	char	*src_cp;
+	const char	*str;
+	size_t		i;
 
-	dest_cp = (char *)dest;
-	src_cp = (char *)src;
-	if (dest == src)
-		return (dest);
-	if (src_cp < dest_cp)
+	str = (const char*)s;
+	i = 0;
+	while (i < n)
 	{
-		while (n--)
-			dest_cp[n] = src_cp[n];
-		return (dest);
+		if (str[i] == c)
+			return ((void *)(s + i));
+		i++;
 	}
-	while (n--)
-		*dest_cp++ = *src_cp++;
-	return (dest);
+	return (0);
 }
+
