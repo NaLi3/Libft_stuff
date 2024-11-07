@@ -6,23 +6,21 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:21:43 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/07 10:23:27 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/11/07 13:10:57 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strrchr(const char *string, int character)
+char	*ft_strrchr(const char *string, int character)
 {
 	unsigned int	i;
 
-	i = ft_strlen(string);
+	i = ft_strlen((char *)string);
 	while (i != 0)
 	{
 		if (string[i] == character)
-		{
-			return (string[i]);
-		}
+			return ((char *)string + i);
 		i--;
 	}
 	return (NULL);

@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 09:06:43 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/07 13:45:30 by ilevy            ###   ########.fr       */
+/*   Created: 2024/11/07 13:53:27 by ilevy             #+#    #+#             */
+/*   Updated: 2024/11/07 13:54:28 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+void	ft_putchar_fd(char c, int fd)
 {
-	char	*dup;
-	unsigned int	i;
-
-	i = 0;
-	dup = (char *)malloc(len * sizeof(char));
-	if (!dup)
-		return (0);
-	while (i < len)
-	{
-		dup[i] = s[start];
-		i++;
-		start++;
-	}
-	dup[i] = 0;
-	return (dup);
+	write(fd, &c, 1);
 }
