@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilevy <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 18:38:54 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/07 10:20:30 by ilevy            ###   ########.fr       */
+/*   Created: 2024/11/06 10:10:37 by ilevy             #+#    #+#             */
+/*   Updated: 2024/11/07 10:00:52 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+int	ft_strlen(char *str)
 {
-	if (c >= 33 && c <= 126)
+	int	count;
+
+	count = 0;
+	while (str[count])
 	{
-		return (16384);
+		count++;
 	}
-	return (0);
+	return (count);
 }

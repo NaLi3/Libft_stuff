@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 18:38:54 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/07 10:20:30 by ilevy            ###   ########.fr       */
+/*   Created: 2024/11/07 09:48:05 by ilevy             #+#    #+#             */
+/*   Updated: 2024/11/07 10:18:36 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	*ft_calloc(size_t count, size_t size)
 {
-	if (c >= 33 && c <= 126)
-	{
-		return (16384);
-	}
-	return (0);
+	void	*cameleon;
+
+	cameleon = (void *)malloc(size * count);
+	if (!cameleon)
+		return (0);
+	ft_bzero(cameleon, count);
+	return (cameleon);
 }

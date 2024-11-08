@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 18:38:54 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/07 10:20:30 by ilevy            ###   ########.fr       */
+/*   Created: 2024/11/08 15:15:51 by ilevy             #+#    #+#             */
+/*   Updated: 2024/11/08 23:09:22 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *))
 {
-	if (c >= 33 && c <= 126)
+	t_list	*new_list;
+	t_list	*new_block;
+
+	if (!lst || !f || !del)
+		return (0);
+	while (lst)
 	{
-		return (16384);
+		new_block = ft_lstnew(f(lst->content));
+		if (!new_block)
+		{
+			ft_lstclear(&new_list, del);
+			return (0);
+		}
+		if (!new_list)
+			new_list = new_block;
+		else
+			new_list->next = new_block;
+		lst = lst->next;
+		new_list = new_list->next;
 	}
-	return (0);
+	return (new_block);
 }

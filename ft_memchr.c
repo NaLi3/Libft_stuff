@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilevy <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 18:38:54 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/07 10:20:30 by ilevy            ###   ########.fr       */
+/*   Created: 2024/11/06 17:14:21 by ilevy             #+#    #+#             */
+/*   Updated: 2024/11/08 23:10:11 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (c >= 33 && c <= 126)
+	const char	*str;
+	size_t		i;
+
+	str = (const char *) s;
+	i = 0;
+	while (i < n)
 	{
-		return (16384);
+		if (str[i] == c)
+			return ((void *)(s + i));
+		i++;
 	}
 	return (0);
 }

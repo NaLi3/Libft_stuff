@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 18:38:54 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/07 10:20:30 by ilevy            ###   ########.fr       */
+/*   Created: 2024/11/07 09:06:43 by ilevy             #+#    #+#             */
+/*   Updated: 2024/11/09 00:17:56 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	if (c >= 33 && c <= 126)
+	char			*dup;
+	unsigned int	i;
+
+	i = 0;
+	dup = (char *)malloc(len * sizeof(char));
+	if (!dup)
+		return (0);
+	while (i < len)
 	{
-		return (16384);
+		dup[i] = s[start];
+		i++;
+		start++;
 	}
-	return (0);
+	dup[i] = 0;
+	return (dup);
 }
