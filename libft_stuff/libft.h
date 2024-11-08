@@ -6,7 +6,7 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 03:46:33 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/08 12:08:22 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/11/08 18:04:16 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,13 @@ void	*ft_memset(void *b, int c, size_t n);
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_calloc(size_t count, size_t size);
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
 
 void	ft_bzero(void *s, size_t n);
 void	ft_putchar_fd(char c, int fd);
@@ -55,6 +60,7 @@ char	*ft_strdup(const char *s);
 char	*ft_strtrim(const char *s1, const char *set);
 
 t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);
 
 #endif

@@ -6,34 +6,22 @@
 /*   By: ilevy <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 13:48:46 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/08 13:56:15 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/11/08 15:15:26 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
+	t_list *temp;
+
 	if (!lst)
 		return ;
 	while (lst)
 	{
+		temp = *lst->next;
 		del(*lst->content);
-		del(*lst->next)
+		*lst = temp;
+		free(temp);
 	}
-	*lst->next = NULL;
+	*lst = NULL;
 }
-
-int	main(int argc, char **argv)
-{
-	t_list	*lst;
-	t_list	*new;
-
-	new = (t_list *)malloc(sizeof(t_list));
-	lst = (t_list *)malloc(sizeof(t_list));
-	new->content = argv[1];
-	lst->content = argv[2];
-	new->next = NULL;
-	lst->next = NULL;
-	ft_lstadd_back(&lst, new);
-	return (0);
-}
-

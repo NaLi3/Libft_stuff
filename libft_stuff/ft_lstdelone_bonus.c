@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 13:47:08 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/08 13:47:11 by ilevy            ###   ########.fr       */
+/*   Created: 2024/11/08 14:45:47 by ilevy             #+#    #+#             */
+/*   Updated: 2024/11/08 15:19:24 by ilevy            ###   ########.fr       */
 /*                                                                            */
-/* ***********************************************************************
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_lstdelone(t_list *lst, void(*del)(void *))
@@ -18,3 +19,4 @@ void	ft_lstdelone(t_list *lst, void(*del)(void *))
 	del(lst->content);
 	free(lst);
 }
+
