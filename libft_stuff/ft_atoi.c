@@ -6,7 +6,7 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 16:37:23 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/07 21:20:38 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/11/08 11:09:19 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *nptr)
 {
-	unsigned int	i;
-	int	n;
+	size_t	i;
+	size_t	n;
 	int	sign;
 
 	i = 0;

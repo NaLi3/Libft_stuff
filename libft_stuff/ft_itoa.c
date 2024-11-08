@@ -6,7 +6,7 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 00:43:57 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/08 01:17:06 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/11/08 11:14:49 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,16 @@ static size_t	count_size(long n)
 char	*ft_itoa(int n)
 {
 	size_t size;
+	size_t	neg;
 	long nb;
 	char *str;
-	int	neg;
 
-	size = count_size((long) n);
+	nb = (long) n;
+	neg = 0;
+	size = count_size(nb);
 	str = (char *)malloc(sizeof(char) * (size + 1));
 	if (str == NULL)
 		return (NULL);
-	nb = (long) n;
-	is_negative = 0;
 	if (nb < 0)
 	{
 		nb *= -1;
@@ -55,7 +55,7 @@ char	*ft_itoa(int n)
 			neg = 1;
 	}
 	str[size] = '\0';
-	while (size > (size_t) neg)
+	while (size > neg)
 	{
 		str[size - 1] = nb % 10 + '0';
 		nb /= 10;

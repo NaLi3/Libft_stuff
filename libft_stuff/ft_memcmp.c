@@ -6,7 +6,7 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 17:16:33 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/07 10:20:54 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/11/08 11:18:44 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,10 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	if (i >= n)
 		return (0);
 	return (sc1[i] - sc2[i]);
+}
+
+int	main(int argc, char **argv)
+{
+	printf("%d\n%d\n", ft_memcmp(argv[1], argv[2], 4), memcmp(argv[1], argv[2], 4));
+	return (0);
 }

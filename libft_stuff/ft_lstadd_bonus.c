@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstadd_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ilevy <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 12:20:00 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/08 11:10:24 by ilevy            ###   ########.fr       */
+/*   Created: 2024/11/08 11:37:27 by ilevy             #+#    #+#             */
+/*   Updated: 2024/11/08 11:40:01 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t		i;
-	char	*string;
-
-	i = 0;
-	string = (char *)s;
-	while (i < n)
-	{
-		string[i] = 0;
-		i++;
-	}
-	s = string;
+	if (!lst || !new)
+		return (0);
+	new -> next = *lst;
+	*lst = new;
 }
