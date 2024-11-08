@@ -6,7 +6,7 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:40:57 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/07 10:21:08 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/11/08 18:21:40 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		return (dest);
 	if (!dest && !src)
 		return (0);
-	dest_cp = (char *)dst;
+	dst_cp = (char *)dest;
 	src_cp = (const char*)src;
 	while (n--)
-		dest_cp[n] = src_cp[n];
+		dst_cp[n] = src_cp[n];
 	return (dest);
 }

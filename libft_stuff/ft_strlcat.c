@@ -6,7 +6,7 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 10:15:17 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/07 10:22:03 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/11/08 18:23:56 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size)
 
 	i = 0;
 	dest_len = ft_strlen(dest);
-	src_len = ft_strlen(src);
+	src_len = ft_strlen((char *)src);
 	if (size <= dest_len)
 		return (src_len + size);
 	while (*dest)

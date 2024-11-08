@@ -6,7 +6,7 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 01:18:08 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/08 01:20:53 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/11/08 18:24:18 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char	*new;
 
-	new = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	new = (char *)malloc(sizeof(char) * (ft_strlen((char *)s) + 1));
 	if (!new)
 		return (NULL);
 	i = 0;

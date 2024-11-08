@@ -6,21 +6,11 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:47:00 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/07 10:25:06 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/11/08 18:25:09 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-unsigned int	ft_strlen(char *str)
-{
-	unsigned int	len;
-	
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
 
 char	*ft_strnstr(const char *big, const char *little, unsigned int len)
 {
@@ -31,7 +21,7 @@ char	*ft_strnstr(const char *big, const char *little, unsigned int len)
 
 	i = 0;
 	bigc = (char *)big;
-	n_len = ft_strlen(little);
+	n_len = ft_strlen((char *)little);
 	if (n_len == 0 || little == big)
 		return (bigc);
 	while (bigc[i] && i < len)

@@ -6,7 +6,7 @@
 /*   By: ilevy <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 09:13:19 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/07 09:30:13 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/11/08 18:23:26 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,16 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!join)
 		return (0);
 	while (index < i)
-		join[index++] = s1[index];
+	{
+		join[index] = s1[index];
+		index++;
+	}
 	index = 0;
 	while (index < j)
-		join[index++ + i] = s2[index];
+	{
+		join[index + i] = s2[index];
+		index++;
+	}
 	join[index + i] = 0;
 	return (join);
-}
-
-int	main(int argc, char **argv)
-{
-	printf ("%s\n", ft_strjoin(argv[1], argv[2]));
-	return (0);
 }

@@ -6,9 +6,11 @@
 /*   By: ilevy <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 13:48:46 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/08 15:15:26 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/11/08 18:32:31 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
@@ -18,8 +20,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		return ;
 	while (lst)
 	{
-		temp = *lst->next;
-		del(*lst->content);
+		temp = (*lst)->next;
+		del((*lst)->content);
 		*lst = temp;
 		free(temp);
 	}

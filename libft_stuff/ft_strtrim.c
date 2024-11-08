@@ -6,7 +6,7 @@
 /*   By: ilevy <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:38:40 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/07 13:49:57 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/11/08 18:25:20 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,4 @@ static int	ft_in_set(char c, const char *set)
 			return (0);
 	}
 	return (1);
-}
-
-int	main(int argc, char **argv)
-{
-	printf("%s\n", ft_strtrim(argv[1], argv[2]));
-	return (0);
 }
